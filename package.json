@@ -1,0 +1,31 @@
+{
+  "name": "Profile",
+  "version": "1.0.0",
+  "description": "My shining Nuxt.js project",
+  "author": "PAN",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@firebase/app": "^0.3.3",
+    "@firebase/firestore": "^0.5.6",
+    "@nuxtjs/axios": "^5.0.0",
+    "circular-json": "^0.5.4",
+    "circular-json-es6": "^2.0.2",
+    "express": "^4.15.3",
+    "firebase": "^5.0.4",
+    "nuxt": "^1.0.0",
+    "vuefire": "^2.0.0-alpha.11",
+    "vuetify": "^0.17.3"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "nodemon": "^1.11.0"
+  }
+}
