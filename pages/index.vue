@@ -9,7 +9,9 @@
         <li v-for="(product, key) in products" :key="key">
           <ul>{{product.title}}</ul>
         </li>
-
+       
+         <h1>{{all}}</h1>
+         <h1>{{count}}</h1>
       </div>
     </v-flex>
   </v-layout>
@@ -37,7 +39,7 @@ export default {
   computed:{
     count()
     {
-        return this.$store.state.count;
+        return this.$store.state.products.all;
     },
     ...mapState('products', ['all'])
   },
