@@ -12,6 +12,7 @@
        
          <h1>{{all}}</h1>
          <h1>{{count}}</h1>
+          <h1>{{dbs}}</h1>
       </div>
     </v-flex>
   </v-layout>
@@ -33,15 +34,15 @@ export default {
 
   data() {
     return {
-     
+      products:[]
     };
   },
   computed:{
     count()
     {
-        return this.$store.state.products.all;
+        return this.$store.state.products.dbs;
     },
-    ...mapState('products', ['all'])
+    ...mapState('products', ['all',"dbs"])
   },
   created(){
     this.$store.dispatch('products/getAllProducts');
@@ -50,7 +51,7 @@ export default {
   firestore() {
     return {
       //products: 
-      //products: db.collection("products")
+      products: db.collection("products")
     };
   }
 };

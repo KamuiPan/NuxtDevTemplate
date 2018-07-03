@@ -1,25 +1,27 @@
 import { db } from "../plugins/firebase";
 var CircularJSON = require('circular-json-es6');
 
+export const strict = false;
 
 export const state = () =>( {
-  all: []
+  all: [], dbs : []
 });
 
 // actions
 export const actions = {
-  getAllProducts ({ commit }) {
-    var p =  db.collection("products");
-    
-
-    commit('setProducts', CircularJSON.stringify(p));
+  async getAllProducts ({ commit }) {
+    await  db.collection("products").get().then((querySnapshot) => {
+      console.log("rai");
+      commit('setProducts', querySnapshot);
+    });
   }
 };
 
 // mutations
 export const mutations = {
   setProducts (state, products) {
-    //console.log(products);
-    state.all = products;
+    
+    state.all=products;
+    
   }
 };
